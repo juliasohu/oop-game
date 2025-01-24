@@ -4,10 +4,11 @@ body {
 }
 
 #board {
-    width: 90vw;
-    height: 90vh;
+    width: 100vw;
+    height: 100vh;
     background-color: rgb(212, 176, 219);
     position: relative;
+    overflow: hidden;
 }
 
 #player {
