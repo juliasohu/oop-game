@@ -83,10 +83,25 @@ setInterval(() => {
 }, 4000);
 
 
-// move obstacles
+// update obstacles
 setInterval(() => {
     obstaclesArr.forEach((obstacleInstance, i, arr) => {
+        
+        //move
         obstacleInstance.moveDown()
+
+        //detect collision
+        if (
+            player.positionX < obstacleInstance.positionX + obstacleInstance.width &&
+            player.positionX + player.width > obstacleInstance.positionX &&
+            player.positionY < obstacleInstance.positionY + obstacleInstance.height &&
+            player.positionY + player.height > obstacleInstance.positionY
+        ) {
+            // Collision detected!
+            console.log("game over my friend!");
+            location.href = "gameover.html" //move to the gameover page
+            
+        }     
     });
     }, 100)
 
